@@ -32,19 +32,12 @@ public static class Endpoints
 
                     var data = items
                         .Skip((page.Value - 1) * PageSize)
-                        .Take(page.Value)
+                        .Take(PageSize)
                         .ToList();
                     
                     var paginatedItems = PaginatedListUtils<ReviewResult>.Create(data, count, page.Value, PageSize);
                     
-                    return Results.Ok(new
-                    {
-                        paginatedItems.PageIndex,
-                        paginatedItems.TotalPages,
-                        paginatedItems.HasNextPage,
-                        paginatedItems.HasPreviousPage,
-                        data = paginatedItems,
-                    });
+                    return Results.Ok(paginatedItems);
                 })
             .WithName("ListAssessReview")
             .WithOpenApi()

@@ -15,7 +15,7 @@ public class PaginatedListUtils<T>
         var paginatedList = new PaginatedListUtils<T>()
         {
             PageIndex = pageIndex,
-            TotalPages = (int)Math.Ceiling(count / (double)pageSize),
+            TotalPages = totalPages,
             HasPreviousPage = pageIndex > 1,
             HasNextPage = pageIndex < totalPages
         };
