@@ -2,14 +2,6 @@
 
 public static class Utils
 {
-    public static void AssertNotNull<T>(T value)
-    {
-        if (value is null)
-        {
-            throw new ArgumentNullException();
-        }
-    }
-    
     public static void AssertNotNullOrWhiteSpace(string value)
     {
         if (value is null)

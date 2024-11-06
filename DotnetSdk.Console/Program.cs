@@ -1,6 +1,5 @@
 ﻿using DotnetSdk.Common.Models;
 using DotnetSdk.Sdk.Client;
-using System.Collections.Generic;
 
 string endpoint = "http://localhost:5149";
 string apikey = "5mJk7RSBqhENCznb1ZLRj7F8e1rHONZf";

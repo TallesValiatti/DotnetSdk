@@ -22,7 +22,7 @@ public partial class AssessReviewClient : IAssessReviewClient
                 { "accept", "application/json" },
                 { Constants.ApiKeyHeader, apikey.Trim() }
             },
-            Timeout = TimeSpan.FromSeconds(60),
+            Timeout = TimeSpan.FromSeconds(15),
         };
     }
 
