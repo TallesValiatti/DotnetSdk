@@ -1,4 +1,4 @@
-namespace DotnetSdk.Api;
+namespace DotnetSdk.Common;
 
 public static class Constants
 {

@@ -1,3 +1,5 @@
+using DotnetSdk.Common;
+
 namespace DotnetSdk.Api;
 
 public class ApiKeyEndpointFilter(IConfiguration configuration) : IEndpointFilter

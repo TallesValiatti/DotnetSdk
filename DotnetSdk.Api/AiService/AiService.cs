@@ -1,6 +1,6 @@
 using Azure;
 using Azure.AI.OpenAI;
-using DotnetSdk.Api.AiService.Models;
+using DotnetSdk.Common.Models;
 using OpenAI.Chat;
 
 namespace DotnetSdk.Api.AiService;
@@ -49,6 +49,7 @@ public class AiService(IConfiguration configuration)
         var result = completion.Content[0].Text;
         
         return new ReviewResult(
+            reviewRequest.Message,
             (ReviewResultType)Convert.ToInt16(result),
             CalculateTokenUsageCost(completion));
     }

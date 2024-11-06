@@ -1,31 +1,26 @@
 namespace DotnetSdk.Common;
 
-public class PaginatedListUtils<T> : List<T>
+public class PaginatedListUtils<T>
 {
-    public int PageIndex { get; private set; }
-    public int TotalPages { get; private set; }
+    public int PageIndex { get; set; }
+    public int TotalPages { get; set; }
+    public bool HasNextPage { get; set; }
+    public bool HasPreviousPage { get; set; }
+    public List<T> Data { get; set; } = [];
 
-    public PaginatedListUtils(List<T> items, int count, int pageIndex, int pageSize)
+    public static PaginatedListUtils<T> Create(List<T> items, int count, int pageIndex, int pageSize)
     {
-        PageIndex = pageIndex;
-        TotalPages = (int)Math.Ceiling(count / (double)pageSize);
-
-        this.AddRange(items);
-    }
-
-    public bool HasPreviousPage => PageIndex > 1;
-
-    public bool HasNextPage => PageIndex < TotalPages;
-
-    public static PaginatedListUtils<T> Create(IList<T> source, int pageIndex, int pageSize)
-    {
-        var count = source.Count;
-
-        var items = source
-            .Skip((pageIndex - 1) * pageSize)
-            .Take(pageSize)
-            .ToList();
-
-        return new PaginatedListUtils<T>(items, count, pageIndex, pageSize);
+        var totalPages = (int)Math.Ceiling(count / (double)pageSize);
+        
+        var paginatedList = new PaginatedListUtils<T>()
+        {
+            PageIndex = pageIndex,
+            TotalPages = (int)Math.Ceiling(count / (double)pageSize),
+            HasPreviousPage = pageIndex > 1,
+            HasNextPage = pageIndex < totalPages
+        };
+        
+        paginatedList.Data.AddRange(items);
+        return paginatedList;
     }
 }

@@ -1,4 +1,4 @@
-using DotnetSdk.Api.AiService.Models;
+using DotnetSdk.Common.Models;
 
 namespace DotnetSdk.Api;
 

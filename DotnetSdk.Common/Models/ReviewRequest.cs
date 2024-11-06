@@ -1,3 +1,3 @@
-namespace DotnetSdk.Api.AiService.Models;
+namespace DotnetSdk.Common.Models;
 
 public record ReviewRequest(string Message);

@@ -1,5 +1,5 @@
-using DotnetSdk.Api.AiService.Models;
 using DotnetSdk.Common;
+using DotnetSdk.Common.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotnetSdk.Api;
@@ -27,7 +27,15 @@ public static class Endpoints
                     page ??= 1;
                     
                     var items = repository.List();
-                    var paginatedItems = PaginatedListUtils<ReviewResult>.Create(items, page.Value, PageSize);
+                    
+                    var count = items.Count;
+
+                    var data = items
+                        .Skip((page.Value - 1) * PageSize)
+                        .Take(page.Value)
+                        .ToList();
+                    
+                    var paginatedItems = PaginatedListUtils<ReviewResult>.Create(data, count, page.Value, PageSize);
                     
                     return Results.Ok(new
                     {

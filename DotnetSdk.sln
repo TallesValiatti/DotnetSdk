@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetSdk.Sdk", "DotnetSdk.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetSdk.Common", "DotnetSdk.Common\DotnetSdk.Common.csproj", "{756D9D74-9FDE-4665-AB6A-1F78757A2B26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetSdk.Console", "DotnetSdk.Console\DotnetSdk.Console.csproj", "{35F22C2B-429B-4C38-B8F5-92AC1ED12F53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{756D9D74-9FDE-4665-AB6A-1F78757A2B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{756D9D74-9FDE-4665-AB6A-1F78757A2B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{756D9D74-9FDE-4665-AB6A-1F78757A2B26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F22C2B-429B-4C38-B8F5-92AC1ED12F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F22C2B-429B-4C38-B8F5-92AC1ED12F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F22C2B-429B-4C38-B8F5-92AC1ED12F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F22C2B-429B-4C38-B8F5-92AC1ED12F53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
